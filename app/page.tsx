@@ -2,6 +2,14 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { 
+  Briefcase, 
+  Code2, 
+  Zap, 
+  Database,
+  Globe,
+  Building2
+} from "lucide-react";
 
 const socialLinks = [
   {
@@ -80,35 +88,93 @@ export default function Home() {
               {
                 title: "baiterstore",
                 desc: "Modern e-commerce platform.",
+                icon: Globe,
               },
               {
                 title: "SAP-Event-Mesh-Client-with-Java",
                 desc: "Enterprise event-driven integration.",
+                icon: Zap,
               },
               {
                 title: "Student-Management",
                 desc: "Academic management platform.",
+                icon: Briefcase,
               },
               {
                 title: "BUSCA-CEP",
                 desc: "Brazilian CEP API utility.",
+                icon: Database,
               },
-            ].map((project) => (
-              <div
-                key={project.title}
-                className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl hover:-translate-y-2 transition"
-              >
-                <div className="mb-6 h-14 w-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500" />
+            ].map((project) => {
+              const IconComponent = project.icon;
+              return (
+                <div
+                  key={project.title}
+                  className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl hover:-translate-y-2 transition"
+                >
+                  <div className="mb-6 h-14 w-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center">
+                    <IconComponent className="w-7 h-7 text-white" />
+                  </div>
 
-                <h3 className="text-2xl font-bold mb-4">
-                  {project.title}
-                </h3>
+                  <h3 className="text-2xl font-bold mb-4">
+                    {project.title}
+                  </h3>
 
-                <p className="text-zinc-400">
-                  {project.desc}
-                </p>
-              </div>
-            ))}
+                  <p className="text-zinc-400">
+                    {project.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="clients" className="relative z-10 px-8 py-24 border-t border-white/10">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-black mb-16">Clients & Companies</h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "UOL",
+                role: "Web Development & Integration",
+                icon: Globe,
+                color: "from-orange-500 to-red-500",
+              },
+              {
+                name: "BRASIF",
+                role: "SAP CPI, ECC & BI Projects",
+                icon: Building2,
+                color: "from-blue-500 to-indigo-500",
+              },
+              {
+                name: "PagBank",
+                role: "SAP CPI Integration & Cloud Solutions",
+                icon: Code2,
+                color: "from-purple-500 to-pink-500",
+              },
+            ].map((client) => {
+              const IconComponent = client.icon;
+              return (
+                <div
+                  key={client.name}
+                  className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl hover:-translate-y-2 transition"
+                >
+                  <div className={`mb-6 h-14 w-14 rounded-2xl bg-gradient-to-br ${client.color} flex items-center justify-center`}>
+                    <IconComponent className="w-7 h-7 text-white" />
+                  </div>
+
+                  <h3 className="text-2xl font-bold mb-2">
+                    {client.name}
+                  </h3>
+
+                  <p className="text-zinc-400">
+                    {client.role}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
