@@ -1,10 +1,39 @@
 import Link from "next/link";
+import { 
+  Building2, 
+  Code2, 
+  Database,
+  Globe,
+  Zap,
+  Briefcase
+} from "lucide-react";
 
 const professionalHighlights = [
   "Software Developer at LAB2DEV",
   "Systems Analysis and Development background from FAM",
   "Experience with AI products, automation, SaaS and enterprise integrations",
   "Certified in SAP ABAP, Python and web development bootcamp training",
+];
+
+const clients = [
+  {
+    name: "UOL",
+    icon: Globe,
+    color: "text-orange-500",
+    projects: ["Web Development", "Integration Systems", "Full-Stack Solutions"],
+  },
+  {
+    name: "BRASIF",
+    icon: Building2,
+    color: "text-blue-500",
+    projects: ["SAP CPI (Cloud Platform Integration)", "SAP ECC", "SAP Business Intelligence"],
+  },
+  {
+    name: "PagBank",
+    icon: Code2,
+    color: "text-purple-500",
+    projects: ["SaaS Platform Development", "Payment Integration", "Automation Systems"],
+  },
 ];
 
 const socialLinks = [
@@ -76,6 +105,34 @@ export default function AboutPage() {
                   {item}
                 </div>
               ))}
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+              <h2 className="text-3xl font-bold mb-6">Client Experience</h2>
+              <div className="grid gap-6 sm:grid-cols-3">
+                {clients.map((client) => {
+                  const IconComponent = client.icon;
+                  return (
+                    <div
+                      key={client.name}
+                      className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl"
+                    >
+                      <div className="flex items-center gap-3 mb-4">
+                        <IconComponent className={`w-6 h-6 ${client.color}`} />
+                        <h3 className="font-bold text-lg text-white">{client.name}</h3>
+                      </div>
+                      <ul className="space-y-2">
+                        {client.projects.map((project) => (
+                          <li key={project} className="text-sm text-zinc-400 flex items-start gap-2">
+                            <span className="text-indigo-400 mt-1">▸</span>
+                            {project}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
