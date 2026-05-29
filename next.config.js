@@ -1,7 +1,7 @@
 const path = require("path");
 
 const isGitHubPages = process.env.GITHUB_PAGES === "true";
-const repositoryName = "ediiney-premium-portfolio";
+const repositoryName = "ediiney-andrade";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

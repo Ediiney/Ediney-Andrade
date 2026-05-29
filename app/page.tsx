@@ -49,14 +49,14 @@ export default function Home() {
           </div>
 
           <h1 className="text-7xl md:text-8xl font-black tracking-tight leading-none">
-            AI Product
+            Software
             <br />
             Engineer
           </h1>
 
           <p className="max-w-2xl mx-auto mt-8 text-xl text-zinc-400 leading-relaxed">
-            Software Engineer focused on Artificial Intelligence,
-            automation systems and modern SaaS platforms.
+            SAP Integration Suite specialist. Building enterprise integrations,
+            APIs and cloud solutions with focus on high availability and security.
           </p>
 
           <div className="mt-10 flex gap-4 justify-center">
@@ -138,19 +138,19 @@ export default function Home() {
             {[
               {
                 name: "UOL",
-                role: "Web Development & Integration",
+                role: "SAP CPI Integration",
                 icon: Globe,
                 color: "from-orange-500 to-red-500",
               },
               {
                 name: "BRASIF",
-                role: "SAP CPI, ECC & BI Projects",
+                role: "SAP CPI, ECC & BI",
                 icon: Building2,
                 color: "from-blue-500 to-indigo-500",
               },
               {
                 name: "PagBank",
-                role: "SAP CPI Integration & Cloud Solutions",
+                role: "SAP CPI Integration & APIs",
                 icon: Code2,
                 color: "from-purple-500 to-pink-500",
               },
@@ -188,17 +188,18 @@ export default function Home() {
             <h2 className="mt-4 text-5xl font-black">Ediney Andrade</h2>
           </div>
 
-          <div className="space-y-8">
+            <div className="space-y-8">
             <p className="text-xl leading-relaxed text-zinc-300">
-              Software Developer based in Sao Paulo, currently connected to LAB2DEV,
-              with a background in Systems Analysis and Development. I build digital
-              products with a focus on AI, automation, SaaS platforms and enterprise
-              integrations, combining modern web development with practical business
-              problem solving.
+              Software Developer based in São Paulo, currently working at LAB2DEV
+              as a SAP Cloud Integration Consultant. Specialized in enterprise
+              integrations, API management, event-driven architectures and cloud
+              solutions. I build scalable integration scenarios with SAP Integration
+              Suite (SAP CPI, API Management, Event Mesh, Open Connectors),
+              combining security, performance and business automation.
             </p>
 
             <div className="grid gap-4 sm:grid-cols-3">
-              {["AI products", "SaaS platforms", "SAP ABAP"].map((skill) => (
+              {["SAP Integration Suite", "Cloud Architecture", "Enterprise APIs"].map((skill) => (
                 <div
                   key={skill}
                   className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-zinc-200 backdrop-blur-xl"
