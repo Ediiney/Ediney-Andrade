@@ -32,7 +32,7 @@ const clients = [
     name: "PagBank",
     icon: Code2,
     color: "text-purple-500",
-    projects: ["SaaS Platform Development", "Payment Integration", "Automation Systems"],
+    projects: ["SAP CPI Integration", "Cloud Platform Orchestration", "API Middleware & Connectors"],
   },
 ];
 

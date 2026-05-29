@@ -150,7 +150,7 @@ export default function Home() {
               },
               {
                 name: "PagBank",
-                role: "SaaS & Payment Integration",
+                role: "SAP CPI Integration & Cloud Solutions",
                 icon: Code2,
                 color: "from-purple-500 to-pink-500",
               },
