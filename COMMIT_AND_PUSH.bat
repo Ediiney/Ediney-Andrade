@@ -1,5 +1,5 @@
 @echo off
-REM Script para commit e push para GitHub
+REM Script para commit e push das mudancas SAP CPI
 setlocal enabledelayedexpansion
 
 set "PROJECT_DIR=c:\Users\Ediney\Documents\ediiney-premium-portfolio.worktrees\agents-renomear-repositorio-e-melhorias-cv"
@@ -7,35 +7,38 @@ set "MAIN_DIR=C:\Users\Ediney\Documents\ediiney-premium-portfolio"
 
 echo.
 echo ========================================
+echo SAP CPI Portfolio Update
+echo ========================================
+echo.
+
 echo PASSO 1: Sincronizando branch de trabalho
 echo ========================================
 cd /d "%PROJECT_DIR%"
 
 echo.
-echo Verificando status...
-git status
+echo Verificando mudancas...
+git status --porcelain
 
 echo.
 echo Adicionando mudancas...
 git add .
 
 echo.
-echo Verificando mudancas a serem commitadas...
-git status
-
-echo.
 echo ========================================
 echo PASSO 2: Commitando mudancas
 echo ========================================
-git commit -m "Feat: Add clients section with contextual icons and SAP CPI focus
+git commit -m "Refactor: Update portfolio to SAP CPI focus with detailed projects
 
-- Added Clients & Companies section with UOL, BRASIF, and PagBank
-- Replaced generic blue placeholders with contextual lucide-react icons
-- Expanded about page with detailed client experience and projects
-- Updated PagBank context to SAP CPI Integration focus (API integration, cloud orchestration, middleware)
-- Updated package.json name to ediiney-andrade and added lucide-react dependency
-- BRASIF projects include SAP CPI, SAP ECC, and SAP Business Intelligence
-- UOL includes Web Development, Integration Systems, and Full-Stack Solutions
+Major Changes:
+- Changed title: AI Product Engineer ^> Software Engineer
+- Updated focus: AI/SaaS ^> SAP Integration Suite specialist
+- Expanded about page with professional summary
+- Added Technical Skills section with 16 items
+- Added Featured Projects section with 4 projects
+- Updated client experience with SAP CPI context
+- UOL Group: iFlows, API Management, Message Processing
+- BRASIF: S/4HANA, SAP ECC, SAP BI
+- PagBank: REST/SOAP, Event Mesh, Secure APIs
 
 Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
 
@@ -85,11 +88,15 @@ if %errorlevel% neq 0 (
 
 echo.
 echo ========================================
-echo PASSO 5: Validando resultado
+echo PASSO 5: Validando e fazendo push final
 echo ========================================
 echo.
 echo Status do main worktree:
 git status --porcelain
+
+echo.
+echo Push para main (GitHub)
+git push origin main
 
 echo.
 echo Ultimos commits:
@@ -97,12 +104,13 @@ git log --oneline -5
 
 echo.
 echo ========================================
-echo ✅ SUCESSO! Mudancas aplicadas e enviadas para GitHub
+echo ✅ SUCESSO! Portfolio atualizado
 echo ========================================
 echo.
-echo Proximas etapas (opcional):
-echo 1. Push main branch se necessario: git push origin main
-echo 2. Verificar no GitHub: https://github.com/Ediiney/ediiney-andrade
-echo 3. Fazer deploy se usar CI/CD (Vercel, Netlify, etc)
+echo Proximas etapas:
+echo 1. Verify no GitHub: https://github.com/Ediiney/ediiney-andrade
+echo 2. Deploy automatico com CI/CD (Vercel, Netlify, etc)
+echo 3. Verificar site: https://ediiney-andrade.github.io
 echo.
 pause
+
