@@ -1,243 +1,272 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { 
-  Briefcase, 
-  Code2, 
-  Zap, 
-  Database,
-  Globe,
-  Building2
+import {
+  ArrowDown,
+  ArrowUpRight,
+  Blocks,
+  Braces,
+  CheckCircle2,
+  CloudCog,
+  Github,
+  Linkedin,
+  MapPin,
+  Network,
+  ShieldCheck,
+  Sparkles,
+  Workflow,
 } from "lucide-react";
 
-const socialLinks = [
+const expertise = [
   {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/edineyandrade/",
+    icon: Workflow,
+    number: "01",
+    title: "Integrações ponta a ponta",
+    text: "Desenho e implementação de iFlows conectando SAP S/4HANA, ECC, BW, SuccessFactors e plataformas SaaS.",
   },
   {
-    label: "GitHub",
-    href: "https://github.com/Ediiney",
+    icon: Network,
+    number: "02",
+    title: "APIs e eventos",
+    text: "APIs REST, SOAP e OData, governança com API Management e arquiteturas orientadas a eventos com Event Mesh.",
   },
+  {
+    icon: ShieldCheck,
+    number: "03",
+    title: "Segurança e operação",
+    text: "OAuth 2.0, certificados X.509, keystores, monitoramento, troubleshooting e sustentação de ambientes críticos.",
+  },
+];
+
+const projects = [
+  {
+    tag: "Integração SAP",
+    title: "SAP CI ↔ S/4HANA & BW",
+    text: "Cenários ponta a ponta com iFlows, transformação de mensagens, exposição de APIs e integração segura entre sistemas.",
+    tools: ["SAP CI", "S/4HANA", "SAP BW", "OData"],
+  },
+  {
+    tag: "Automação",
+    title: "SAP CI & DocuSign",
+    text: "Automação do ciclo de documentos com APIs REST, autenticação OAuth 2.0 e tratamento de eventos.",
+    tools: ["REST API", "OAuth 2.0", "DocuSign"],
+  },
+  {
+    tag: "People Tech",
+    title: "Ecossistema SuccessFactors",
+    text: "Integrações entre SuccessFactors, Gupy, AchieveMore, Learning Rocks e SAP HCM.",
+    tools: ["SuccessFactors", "SAP HCM", "Groovy"],
+  },
+  {
+    tag: "Arquitetura",
+    title: "API Management & Event Mesh",
+    text: "Governança, versionamento e comunicação orientada a eventos para integrações escaláveis e resilientes.",
+    tools: ["API Management", "Event Mesh", "BTP"],
+  },
+];
+
+const stack = [
+  "SAP Integration Suite",
+  "Cloud Integration / CPI",
+  "API Management",
+  "Event Mesh",
+  "Open Connectors",
+  "Groovy Script",
+  "XSLT 3.0",
+  "REST · SOAP · OData",
+  "IDoc · RFC · SFTP",
+  "OAuth 2.0 · X.509",
+  "S/4HANA · ECC · BW",
+  "SuccessFactors",
+  "Git · CI/CD",
 ];
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-black text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#4f46e5,transparent_30%),radial-gradient(circle_at_bottom_right,#06b6d4,transparent_30%)] opacity-30" />
-
-      <header className="relative z-10 flex items-center justify-between px-8 py-6 border-b border-white/10 backdrop-blur-xl">
-        <h1 className="text-2xl font-bold">Ediiney</h1>
-
-        <nav className="hidden md:flex gap-8 text-zinc-400">
-          <Link href="/#projects">Projects</Link>
-          <Link href="/about">About</Link>
-          <Link href="/#contact">Contact</Link>
+    <main>
+      <header className="site-header">
+        <a className="brand" href="#top" aria-label="Voltar ao início">
+          EA<span>.</span>
+        </a>
+        <nav aria-label="Navegação principal">
+          <a href="#sobre">Sobre</a>
+          <a href="#experiencia">Experiência</a>
+          <a href="#projetos">Projetos</a>
         </nav>
+        <a className="header-cta" href="#contato">
+          Vamos conversar <ArrowUpRight size={16} />
+        </a>
       </header>
 
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-[90vh] text-center px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm text-zinc-300 backdrop-blur-xl">
-            <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
-            Building AI Products & SaaS
+      <section className="hero" id="top">
+        <div className="hero-orbit orbit-one" />
+        <div className="hero-orbit orbit-two" />
+        <div className="hero-content">
+          <div className="availability">
+            <span />
+            Disponível para novos desafios
           </div>
-
-          <h1 className="text-7xl md:text-8xl font-black tracking-tight leading-none">
-            Software
+          <p className="eyebrow">SAP CLOUD INTEGRATION CONSULTANT</p>
+          <h1>
+            Ediney
             <br />
-            Engineer
+            <span>Andrade.</span>
           </h1>
-
-          <p className="max-w-2xl mx-auto mt-8 text-xl text-zinc-400 leading-relaxed">
-            SAP Integration Suite specialist. Building enterprise integrations,
-            APIs and cloud solutions with focus on high availability and security.
+          <p className="hero-description">
+            Transformo processos complexos em integrações SAP
+            <strong> seguras, escaláveis e fáceis de operar.</strong>
           </p>
-
-          <div className="mt-10 flex gap-4 justify-center">
+          <div className="hero-actions">
+            <a className="button primary" href="#projetos">
+              Ver minha experiência <ArrowDown size={18} />
+            </a>
             <a
+              className="button secondary"
               href="https://www.linkedin.com/in/edineyandrade/"
               target="_blank"
               rel="noreferrer"
-              className="rounded-2xl bg-white px-8 py-4 text-black font-semibold hover:scale-105 transition"
             >
-              LinkedIn
+              <Linkedin size={18} /> LinkedIn
             </a>
-
-            <Link
-              href="/about"
-              className="rounded-2xl border border-white/10 bg-white/5 px-8 py-4 backdrop-blur-xl hover:bg-white/10 transition"
-            >
-              About Me
-            </Link>
           </div>
-        </motion.div>
+        </div>
+        <div className="hero-side">
+          <p>Baseado em</p>
+          <strong><MapPin size={15} /> São Paulo, Brasil</strong>
+        </div>
+        <p className="hero-index">PORTFÓLIO / 2026</p>
       </section>
 
-      <section id="projects" className="relative z-10 px-8 py-24">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-black mb-16">Featured Projects</h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "baiterstore",
-                desc: "Modern e-commerce platform.",
-                icon: Globe,
-              },
-              {
-                title: "SAP-Event-Mesh-Client-with-Java",
-                desc: "Enterprise event-driven integration.",
-                icon: Zap,
-              },
-              {
-                title: "Student-Management",
-                desc: "Academic management platform.",
-                icon: Briefcase,
-              },
-              {
-                title: "BUSCA-CEP",
-                desc: "Brazilian CEP API utility.",
-                icon: Database,
-              },
-            ].map((project) => {
-              const IconComponent = project.icon;
-              return (
-                <div
-                  key={project.title}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl hover:-translate-y-2 transition"
-                >
-                  <div className="mb-6 h-14 w-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center">
-                    <IconComponent className="w-7 h-7 text-white" />
-                  </div>
-
-                  <h3 className="text-2xl font-bold mb-4">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-zinc-400">
-                    {project.desc}
-                  </p>
-                </div>
-              );
-            })}
+      <section className="intro section" id="sobre">
+        <div className="section-label">01 / PERFIL</div>
+        <div className="intro-copy">
+          <p className="kicker"><Sparkles size={18} /> SOBRE MIM</p>
+          <h2>
+            Integração não é só conectar sistemas.
+            <span> É fazer o negócio fluir.</span>
+          </h2>
+          <div className="intro-grid">
+            <p>
+              Sou desenvolvedor de software e consultor SAP Cloud Integration na
+              LAB2DEV, com mais de 4 anos de atuação em integrações empresariais,
+              projetos e sustentação AMS.
+            </p>
+            <p>
+              Trabalho com SAP Integration Suite para construir cenários robustos,
+              automatizar processos e conectar ecossistemas SAP e não SAP com foco
+              em disponibilidade, segurança e performance.
+            </p>
+          </div>
+          <div className="facts">
+            <div><strong>4+</strong><span>anos em tecnologia<br />e integrações</span></div>
+            <div><strong>3</strong><span>grandes empresas<br />atendidas</span></div>
+            <div><strong>360°</strong><span>projetos, melhorias<br />e sustentação</span></div>
           </div>
         </div>
       </section>
 
-      <section id="clients" className="relative z-10 px-8 py-24 border-t border-white/10">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-black mb-16">Clients & Companies</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "UOL",
-                role: "SAP CPI Integration",
-                icon: Globe,
-                color: "from-orange-500 to-red-500",
-              },
-              {
-                name: "BRASIF",
-                role: "SAP CPI, ECC & BI",
-                icon: Building2,
-                color: "from-blue-500 to-indigo-500",
-              },
-              {
-                name: "PagBank",
-                role: "SAP CPI Integration & APIs",
-                icon: Code2,
-                color: "from-purple-500 to-pink-500",
-              },
-            ].map((client) => {
-              const IconComponent = client.icon;
-              return (
-                <div
-                  key={client.name}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl hover:-translate-y-2 transition"
-                >
-                  <div className={`mb-6 h-14 w-14 rounded-2xl bg-gradient-to-br ${client.color} flex items-center justify-center`}>
-                    <IconComponent className="w-7 h-7 text-white" />
-                  </div>
-
-                  <h3 className="text-2xl font-bold mb-2">
-                    {client.name}
-                  </h3>
-
-                  <p className="text-zinc-400">
-                    {client.role}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="relative z-10 px-8 py-24 border-t border-white/10">
-        <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+      <section className="expertise section" id="experiencia">
+        <div className="section-heading">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
-              About
-            </p>
-            <h2 className="mt-4 text-5xl font-black">Ediney Andrade</h2>
+            <p className="kicker">O QUE EU ENTREGO</p>
+            <h2>Especialidade que conecta<br />estratégia e execução.</h2>
           </div>
+          <CloudCog className="heading-icon" />
+        </div>
+        <div className="expertise-list">
+          {expertise.map(({ icon: Icon, number, title, text }) => (
+            <article key={number}>
+              <span className="item-number">{number}</span>
+              <div className="item-icon"><Icon /></div>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="experience-band">
+          <div>
+            <span>2022 — ATUAL</span>
+            <h3>LAB2DEV</h3>
+            <p>SAP Cloud Integration Consultant</p>
+          </div>
+          <ul>
+            <li><CheckCircle2 /> Projetos de integração e melhorias contínuas</li>
+            <li><CheckCircle2 /> AMS e troubleshooting em ambientes críticos</li>
+            <li><CheckCircle2 /> Experiência com UOL, BRASIF e PagBank</li>
+          </ul>
+        </div>
+      </section>
 
-            <div className="space-y-8">
-            <p className="text-xl leading-relaxed text-zinc-300">
-              Software Developer based in São Paulo, currently working at LAB2DEV
-              as a SAP Cloud Integration Consultant. Specialized in enterprise
-              integrations, API management, event-driven architectures and cloud
-              solutions. I build scalable integration scenarios with SAP Integration
-              Suite (SAP CPI, API Management, Event Mesh, Open Connectors),
-              combining security, performance and business automation.
-            </p>
+      <section className="projects section" id="projetos">
+        <div className="section-heading">
+          <div>
+            <p className="kicker">EXPERIÊNCIA APLICADA</p>
+            <h2>Projetos em destaque.</h2>
+          </div>
+          <Braces className="heading-icon" />
+        </div>
+        <div className="project-grid">
+          {projects.map((project, index) => (
+            <article key={project.title} className="project-card">
+              <div className="project-top">
+                <span>{project.tag}</span>
+                <span>0{index + 1}</span>
+              </div>
+              <h3>{project.title}</h3>
+              <p>{project.text}</p>
+              <div className="chips">
+                {project.tools.map((tool) => <span key={tool}>{tool}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
-            <div className="grid gap-4 sm:grid-cols-3">
-              {["SAP Integration Suite", "Cloud Architecture", "Enterprise APIs"].map((skill) => (
-                <div
-                  key={skill}
-                  className="rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-zinc-200 backdrop-blur-xl"
-                >
-                  {skill}
-                </div>
-              ))}
-            </div>
+      <section className="stack section">
+        <div className="stack-title">
+          <Blocks />
+          <div>
+            <p className="kicker">TOOLKIT</p>
+            <h2>Tecnologias que uso.</h2>
+          </div>
+        </div>
+        <div className="stack-list">
+          {stack.map((item) => <span key={item}>{item}</span>)}
+        </div>
+      </section>
 
-            <Link
-              href="/about"
-              className="inline-flex rounded-2xl border border-white/10 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur-xl transition hover:bg-white/10"
-            >
-              Read full profile
-            </Link>
+      <section className="education section">
+        <div className="section-label">02 / FORMAÇÃO</div>
+        <div className="education-content">
+          <div>
+            <span>2020 — 2022</span>
+            <h3>Análise e Desenvolvimento de Sistemas</h3>
+            <p>Centro Universitário FAM</p>
+          </div>
+          <div>
+            <span>CERTIFICAÇÕES & ESTUDOS</span>
+            <p>SAP BTP & CAP · Oracle Cloud Infrastructure · SAP CPI & Groovy Script</p>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="relative z-10 px-8 py-24 border-t border-white/10">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-black mb-8">Social Links</h2>
-
-          <div className="flex flex-wrap gap-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-2xl border border-white/10 bg-white/5 px-6 py-4 font-semibold text-zinc-100 backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/10"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+      <footer id="contato">
+        <p className="kicker">VAMOS CONSTRUIR ALGO QUE FUNCIONE?</p>
+        <h2>Pronto para o<br /><span>próximo desafio.</span></h2>
+        <p className="footer-copy">
+          Se você busca alguém que une visão técnica, entendimento de negócio e
+          experiência em integrações SAP, vamos conversar.
+        </p>
+        <div className="footer-links">
+          <a href="https://www.linkedin.com/in/edineyandrade/" target="_blank" rel="noreferrer">
+            <Linkedin /> LinkedIn <ArrowUpRight />
+          </a>
+          <a href="https://github.com/Ediiney" target="_blank" rel="noreferrer">
+            <Github /> GitHub <ArrowUpRight />
+          </a>
         </div>
-      </section>
+        <div className="footer-bottom">
+          <span>© 2026 Ediney Andrade</span>
+          <span>SAP Integration Suite · São Paulo, BR</span>
+        </div>
+      </footer>
     </main>
   );
 }

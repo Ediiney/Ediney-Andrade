@@ -1,29 +1,21 @@
-# Ediiney Premium Portfolio
+# Ediney Andrade — Portfólio profissional
 
-## Install
+Currículo online de Ediney Andrade, SAP Cloud Integration Consultant com foco em
+SAP Integration Suite, Cloud Integration (CPI), APIs e integrações empresariais.
+
+## Desenvolvimento
 
 ```bash
 npm install
-```
-
-## Run Development
-
-```bash
 npm run dev
 ```
 
-Open:
-
-http://localhost:3000
-
-## Build Production
+## Build estático
 
 ```bash
+$env:GITHUB_PAGES="true"
 npm run build
 ```
 
-## Start Production
-
-```bash
-npm run start
-```
+O GitHub Actions publica automaticamente o conteúdo da pasta `out` no GitHub
+Pages após alterações na branch `main`.
